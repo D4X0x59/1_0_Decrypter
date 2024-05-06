@@ -7,6 +7,10 @@ I wrote something in order to extract the encrypted binary.
 
 ## Images cause why not
 - Entry point 
+
+
 ![](img/entrypoint.png)
 - Sections
+
+
 ![](img/sections.png)
