@@ -106,6 +106,8 @@ int main(int argc, char** argv)
 			continue;
 		}
 		CloseHandle(hFile);
+		delete[] file;
+		file = nullptr;
 
 		printf("[+]Binary extracted successfully, output name: %s \n\n", fileName.data());
 	}
