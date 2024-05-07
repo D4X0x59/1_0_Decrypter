@@ -23,6 +23,12 @@ int main(int argc, char** argv)
 
 	for(int argIndex = 1; argIndex < argc; argIndex++)
 	{
+		if(file)
+		{
+			delete[] file;
+			file = nullptr;
+		}
+
 		fileName = argv[argIndex];
 		hFile = CreateFileA(argv[argIndex], FILE_READ_ACCESS, FILE_SHARE_READ, nullptr, OPEN_EXISTING, 0, nullptr);
 		fileSize = GetFileSize(hFile, &fileSize);
@@ -106,8 +112,6 @@ int main(int argc, char** argv)
 			continue;
 		}
 		CloseHandle(hFile);
-		delete[] file;
-		file = nullptr;
 
 		printf("[+]Binary extracted successfully, output name: %s \n\n", fileName.data());
 	}
